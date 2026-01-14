@@ -1,0 +1,77 @@
+/* ==============================
+   FLOATING ACTION BUTTON WITH PROGRESS
+================================ */
+.fabContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  z-index: 10002;
+  display: block; /* Show on all devices */
+}
+
+/* Move up on mobile to avoid bottom toggle at 70px */
+@media (max-width: 768px) {
+  .fabContainer {
+    bottom: 90px; /* Move above the 70px toggle */
+  }
+}
+
+.progressRing {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.progressSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progressBg {
+  fill: none;
+  stroke: rgba(59, 130, 246, 0.2);
+  stroke-width: 3;
+}
+
+.progressFill {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 163.36;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+.fab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.fab:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Remove the desktop hide rule since we want it on all devices */

@@ -1,0 +1,145 @@
+@import "../../styles/variables";
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $border;
+}
+
+.imageSection {
+  width: 100%;
+  min-height: 500px;
+  background-image: url("/images/HC_Hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 76, 41, 0.3) 0%,
+      rgba(255, 76, 41, 0.5) 50%,
+      rgba(255, 76, 41, 0.7) 100%
+    );
+    z-index: 1;
+  }
+}
+
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 6%;
+  text-align: center;
+  background: $bg-primary;
+  width: 100%;
+}
+
+.headline {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: $text-soft;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-family: $font-display;
+}
+
+.subheadline {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: $text-muted;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary {
+  background: $fire-red;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: $radius-md;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  
+  &:hover {
+    background: darken($fire-red, 5%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 76, 41, 0.3);
+  }
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid $border;
+  color: $text-soft;
+  padding: 14px 32px;
+  border-radius: $radius-md;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $bg-light;
+    border-color: $fire-red;
+    color: $fire-red;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageSection {
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .imageSection::before {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 76, 41, 0.4) 0%,
+      rgba(255, 76, 41, 0.6) 50%,
+      rgba(255, 76, 41, 0.8) 100%
+    );
+  }
+  
+  .content {
+    padding: 40px 4%;
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageSection {
+    min-height: 350px;
+  }
+  
+  .content {
+    padding: 32px 4%;
+  }
+}

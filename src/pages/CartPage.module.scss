@@ -1,0 +1,421 @@
+@import "../styles/variables";
+
+.page {
+  padding: 80px 6%;
+  min-height: 70vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 8px;
+  color: #1e293b;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+  margin: 40px 0;
+}
+
+.empty h2 {
+  font-size: 1.5rem;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.empty p {
+  color: #64748b;
+  margin: 0 0 24px 0;
+}
+
+.shopBtn {
+  display: inline-block;
+  background: #dc2626;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.shopBtn:hover {
+  background: #b91c1c;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemsHeader {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.itemsHeader h2 {
+  font-size: 1.1rem;
+  color: #374151;
+  margin: 0;
+  font-weight: 600;
+}
+
+.itemsList {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.itemsList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.itemsList::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.itemsList::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.itemsList::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 50px 1fr auto auto auto;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 8px;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.itemImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemImage img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.info h3 {
+  font-size: 0.85rem;
+  margin: 0 0 2px 0;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qtyBtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qtyBtn:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+.qtyBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qty {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.subtotal {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #dc2626;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.remove {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.remove:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.summary {
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.summary h2 {
+  font-size: 1.25rem;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.summaryDetails {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 1rem;
+}
+
+.totalRow strong {
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.notice {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.notice h3 {
+  font-size: 0.9rem;
+  margin: 0 0 8px 0;
+  color: #0369a1;
+  font-weight: 600;
+}
+
+.notice p {
+  font-size: 0.8rem;
+  color: #0369a1;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.continueBtn {
+  display: block;
+  text-align: center;
+  background: transparent;
+  color: #dc2626;
+  padding: 12px 20px;
+  border: 2px solid #dc2626;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.continueBtn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.enquiryBtn {
+  display: block;
+  text-align: center;
+  background: #dc2626;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.enquiryBtn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.note {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 16px 0 0 0;
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 60px 4%;
+  }
+  
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .item {
+    grid-template-columns: 40px 1fr auto auto;
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .itemImage img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .info h3 {
+    font-size: 0.8rem;
+  }
+  
+  .price {
+    font-size: 0.7rem;
+  }
+  
+  .qtyBtn {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  
+  .qty {
+    font-size: 0.75rem;
+    min-width: 16px;
+  }
+  
+  .subtotal {
+    font-size: 0.8rem;
+  }
+  
+  .remove {
+    font-size: 0.8rem;
+  }
+  
+  .actions {
+    gap: 2px;
+  }
+  
+  .summary {
+    position: static;
+  }
+  
+  .ctaActions {
+    flex-direction: column;
+  }
+}

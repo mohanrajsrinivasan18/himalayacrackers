@@ -1,0 +1,42 @@
+/* Brand - Premium Festival Theme (Light Mode) */
+$bg-primary: #FFFFFF; // white background
+$bg-light: rgb(244, 244, 245); // light gray background
+$gold: #FFD700; // accent gold
+$fire-red: #FF4C29; // fire red
+$hero-purple: rgb(109, 50, 107); // hero image purple
+$text-soft: #1F2937; // dark text
+$text-muted: #6B7280; // muted gray text
+$text-dark: #111827;
+
+/* Semantic Colors */
+$primary: $fire-red;
+$accent: $gold;
+$bg-dark: #0B0F1A;
+$bg-card: #FFFFFF;
+$bg-hover: #F3F4F6;
+$border: #E5E7EB;
+$border-light: #F3F4F6;
+$dark: $text-dark;
+
+/* Typography */
+$font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+$font-display: "Poppins", "Inter", system-ui, sans-serif;
+
+/* Radius */
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+$radius-xl: 20px;
+$radius-full: 9999px;
+
+/* Shadows */
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+$shadow-glow: 0 0 20px rgba(255, 215, 0, 0.2);
+
+/* Gradients */
+$gradient-primary: linear-gradient(135deg, $fire-red 0%, darken($fire-red, 10%) 100%);
+$gradient-purple: linear-gradient(135deg, $hero-purple 0%, darken($hero-purple, 10%) 100%);
+$gradient-gold: linear-gradient(135deg, $gold 0%, darken($gold, 10%) 100%);
+$gradient-subtle: linear-gradient(180deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);

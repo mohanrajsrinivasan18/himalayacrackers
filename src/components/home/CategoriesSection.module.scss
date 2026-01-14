@@ -1,0 +1,162 @@
+@import "../../styles/variables";
+
+.section {
+  padding: 80px 6%;
+  background: $bg-primary;
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+}
+
+.section h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 40px;
+  text-align: center;
+  color: $text-soft;
+  font-family: $font-display;
+  font-weight: 800;
+}
+
+.carouselWrapper {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: $bg-primary;
+  border: 1px solid $border;
+  color: $text-soft;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    background: $fire-red;
+    color: #fff;
+    border-color: $fire-red;
+  }
+  
+  &:first-of-type {
+    left: -20px;
+  }
+  
+  &:last-of-type {
+    right: -20px;
+  }
+}
+
+.card {
+  position: relative;
+  height: 280px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid $border;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $fire-red;
+    box-shadow: 0 4px 16px rgba(255, 76, 41, 0.2);
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 24px;
+  z-index: 1;
+}
+
+.overlay span {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: $font-display;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  
+  &:last-child {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 4%;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .card {
+    height: 200px;
+    scroll-snap-align: start;
+  }
+  
+  .overlay {
+    padding: 16px;
+  }
+  
+  .overlay span {
+    font-size: 1rem;
+    
+    &:last-child {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .arrow {
+    display: none;
+  }
+}

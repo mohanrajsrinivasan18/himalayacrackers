@@ -1,0 +1,147 @@
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-main;
+  background: #ffffff;
+  color: $text-soft;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Elegant Static Sparkler Side Borders */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  z-index: 9999;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 5%, #FFD700 1px, transparent 1px),
+    radial-gradient(circle at 50% 15%, #FF6B35 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 22%, #FFD700 1px, transparent 1px),
+    radial-gradient(circle at 50% 30%, #FF4444 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 38%, #FFD700 1px, transparent 1px),
+    radial-gradient(circle at 50% 45%, #FF6B35 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 52%, #FFD700 1px, transparent 1px),
+    radial-gradient(circle at 50% 60%, #FF4444 1px, transparent 1px),
+    radial-gradient(circle at 50% 68%, #FF6B35 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 75%, #FFD700 1px, transparent 1px),
+    radial-gradient(circle at 50% 82%, #FF4444 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 90%, #FFD700 1px, transparent 1px),
+    radial-gradient(circle at 50% 95%, #FF6B35 1px, transparent 1px),
+    linear-gradient(180deg, #FF4444 0%, #FF6B35 50%, #FF4444 100%);
+  background-size: 100% 100%;
+  box-shadow: 0 0 12px rgba(255, 100, 50, 0.4);
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  body::before,
+  body::after {
+    width: 4px;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtleBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-display;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $text-soft;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+p {
+  line-height: 1.6;
+  color: $text-muted;
+}
+
+input, textarea {
+  font-family: inherit;
+  background: $bg-primary;
+  color: $text-soft;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: $fire-red;
+  box-shadow: 0 0 0 3px rgba(255, 76, 41, 0.1);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-light;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: $radius-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}

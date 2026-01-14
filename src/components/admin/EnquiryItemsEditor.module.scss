@@ -1,0 +1,333 @@
+/* ==============================
+   WRAPPER
+================================ */
+.wrap {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  margin-top: 16px;
+}
+
+/* ==============================
+   HEADER
+================================ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.addBtn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addBtn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* ==============================
+   EMPTY STATE
+================================ */
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
+}
+
+.emptyState p {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+}
+
+.emptyAddBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 2px dashed #cbd5e1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.emptyAddBtn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+/* ==============================
+   TABLE HEADER
+================================ */
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 80px 100px 100px 40px;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* ==============================
+   PRODUCT LIST
+================================ */
+.list {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 80px 100px 100px 40px;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background-color: #f8fafc;
+}
+
+/* ==============================
+   PRODUCT INFO
+================================ */
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.category {
+  font-size: 12px;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* ==============================
+   QUANTITY CONTROL
+================================ */
+.qtyControl {
+  display: flex;
+  justify-content: center;
+}
+
+.qtyInput {
+  width: 60px;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  transition: border-color 0.15s ease;
+}
+
+.qtyInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.qtyInput:disabled {
+  background-color: #f9fafb;
+  color: #9ca3af;
+}
+
+/* ==============================
+   PRICE & TOTALS
+================================ */
+.price,
+.subtotal {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.subtotal {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ==============================
+   REMOVE BUTTON
+================================ */
+.removeBtn {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.removeBtn:hover {
+  background: #fecaca;
+  transform: scale(1.1);
+}
+
+/* ==============================
+   FOOTER
+================================ */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.totalSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.totalLabel {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.totalAmount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.saveBtn {
+  background: #059669;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==============================
+   LOCKED NOTE
+================================ */
+.lockedNote {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #fde68a;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 16px;
+  }
+  
+  .tableHeader {
+    display: none;
+  }
+  
+  .row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .productInfo {
+    order: 1;
+  }
+  
+  .qtyControl {
+    order: 2;
+    justify-content: flex-start;
+  }
+  
+  .price,
+  .subtotal {
+    order: 3;
+    text-align: left;
+  }
+  
+  .removeBtn {
+    order: 4;
+    justify-self: flex-end;
+  }
+  
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .totalSection {
+    justify-content: space-between;
+  }
+}

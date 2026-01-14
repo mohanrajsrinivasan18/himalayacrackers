@@ -1,0 +1,21 @@
+.wrap {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 12px;
+  overflow-x: auto;
+}
+
+.wrap button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}

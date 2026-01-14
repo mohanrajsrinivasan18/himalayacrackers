@@ -1,0 +1,326 @@
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+}
+
+.tableWrap {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #f9fafb;
+}
+
+.table th,
+.table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  font-weight: 600;
+  color: #374151;
+}
+
+.low {
+  background: #fff1f2;
+}
+
+.lowBadge {
+  background: #dc2626;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+}
+
+.okBadge {
+  background: #16a34a;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 12px;
+  }
+}
+
+.form {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom: 32px;
+}
+
+.form h3 {
+  margin-bottom: 16px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.form button {
+  background: #111827;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancelBtn {
+  background: #6b7280 !important;
+}
+
+.editBtn {
+  background: #3b82f6;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.editBtn:hover {
+  background: #2563eb;
+}
+
+.addBtn {
+  background: #16a34a;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.addBtn:hover {
+  background: #15803d;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal h3 {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.modal .formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.modal input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.categorySection {
+  margin-bottom: 40px;
+}
+
+.categoryTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+/* Table Column Widths */
+.previewCol {
+  width: 80px;
+  text-align: center;
+}
+
+.productCol {
+  width: 35%;
+  min-width: 200px;
+}
+
+.perCol {
+  width: 80px;
+  text-align: center;
+}
+
+.priceCol {
+  width: 100px;
+  text-align: right;
+}
+
+.qtyCol {
+  width: 60px;
+  text-align: center;
+}
+
+.actionCol {
+  width: 80px;
+  text-align: center;
+}
+
+.thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.noImg {
+  width: 44px;
+  height: 44px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #666;
+}
+
+.productName {
+  font-weight: 600;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.productPer {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .table th,
+  .table td {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+  
+  .table th {
+    font-size: 8px;
+  }
+  
+  .previewCol {
+    width: 50px;
+  }
+  
+  .thumb {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .noImg {
+    width: 32px;
+    height: 32px;
+    font-size: 8px;
+  }
+  
+  .productCol {
+    width: 130px;
+  }
+  
+  .productName {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  .productPer {
+    font-size: 0.7rem;
+  }
+  
+  /* Hide separate per column on mobile since it's shown in product column */
+  .perCol {
+    display: none;
+  }
+  
+  .priceCol {
+    width: 40px;
+    font-size: 0.75rem;
+  }
+  
+  .qtyCol {
+    width: 40px;
+    font-size: 0.75rem;
+  }
+  
+  .actionCol {
+    width: 40px;
+  }
+  
+  .editBtn {
+    padding: 4px 6px;
+    font-size: 0.65rem;
+  }
+}
+

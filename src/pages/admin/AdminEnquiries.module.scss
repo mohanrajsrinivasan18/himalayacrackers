@@ -1,0 +1,263 @@
+/* ==============================
+   PAGE
+================================ */
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* ==============================
+   TOOLBAR (SEARCH + FILTERS)
+================================ */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  flex: 1;
+  min-width: 120px;
+}
+
+/* ==============================
+   STATUS QUICK CHIPS
+================================ */
+.statusChips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.chip {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #f3f4f6;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+}
+
+.chip.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* ==============================
+   LIST CONTAINER & HEADER
+================================ */
+.listContainer {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: visible;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 1fr 0.8fr 1fr 1.5fr 40px;
+  gap: 20px;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-items: center;
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  &:nth-child(3) {
+    justify-content: flex-start;
+  }
+  
+  &:nth-child(4) {
+    justify-content: center;
+  }
+  
+  &:nth-child(5) {
+    justify-content: center;
+  }
+  
+  &:nth-child(6) {
+    justify-content: flex-end;
+  }
+}
+
+/* ==============================
+   LIST
+================================ */
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+/* ==============================
+   SUMMARY BAR
+================================ */
+.summaryBar {
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.summaryBar strong {
+  color: #1e293b;
+  font-size: 14px;
+}
+
+/* ==============================
+   CHIPS (STATUS FILTERS)
+================================ */
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.chips button {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #64748b;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chips button:hover {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.activeChip {
+  background: #3b82f6 !important;
+  color: white !important;
+  border-color: #3b82f6 !important;
+}
+
+.activeChip:hover {
+  background: #2563eb !important;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .headerRow {
+    display: none;
+  }
+  
+  .listContainer {
+    border: none;
+    background: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  
+  .toolbar {
+    padding: 8px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  
+  .toolbar input,
+  .toolbar select {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-width: 100px;
+  }
+  
+  .summaryBar {
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+  
+  .summaryBar strong {
+    font-size: 13px;
+  }
+  
+  .chips {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  
+  .chips button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  
+  .toolbar {
+    flex-direction: column;
+    padding: 6px;
+  }
+  
+  .toolbar input,
+  .toolbar select {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .summaryBar {
+    padding: 8px 10px;
+  }
+  
+  .summaryBar strong {
+    font-size: 12px;
+  }
+  
+  .chips {
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  
+  .chips button {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}

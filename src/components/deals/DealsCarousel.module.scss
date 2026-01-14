@@ -1,0 +1,67 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 4px 0 24px;
+}
+
+.inner {
+  position: relative;
+  width: 1313px; /* TNT computed width */
+  height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  gap: 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  width: 100%;
+  padding: 0 32px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.arrow {
+  position: absolute;
+  z-index: 10;
+  background: #fff;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  padding: 8px 10px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 10px 15px;
+
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: rgb(237 28 36)
+  }
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/* Mobile: swipe only */
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+
+  .inner {
+    width: 100%;
+  }
+}

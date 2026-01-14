@@ -1,0 +1,160 @@
+@import "../../styles/variables";
+
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 24px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brand {
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background: #f3f4f6;
+    color: #dc2626;
+  }
+  
+  &:active {
+    background: #e5e7eb;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.link {
+  display: block;
+  padding: 12px 16px;
+  color: #6b7280;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  
+  &:hover {
+    background: #f3f4f6;
+    color: #dc2626;
+    transform: translateX(2px);
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 280px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    padding: 20px;
+    border-right: none;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .closeBtn {
+    display: flex !important;
+  }
+  
+  .header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+  
+  .brand h2 {
+    font-size: 1.25rem;
+  }
+  
+  .nav {
+    gap: 6px;
+  }
+  
+  .link {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 260px;
+    padding: 16px;
+  }
+  
+  .header {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+  }
+  
+  .brand h2 {
+    font-size: 1.125rem;
+  }
+  
+  .link {
+    padding: 12px 14px;
+    font-size: 0.875rem;
+  }
+  
+  .closeBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+}
+
+
