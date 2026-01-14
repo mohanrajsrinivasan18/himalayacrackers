@@ -1,5 +1,5 @@
 
-import { supabaseAdmin } from "./supabaseClient";
+import { supabaseAdmin } from "./supabaseAdmin";
 
 export async function checkLowStock() {
   const { data: products } = await supabaseAdmin

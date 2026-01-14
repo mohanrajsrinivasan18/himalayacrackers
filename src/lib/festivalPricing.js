@@ -1,5 +1,5 @@
 
-import { supabaseAdmin } from "./supabaseClient";
+import { supabaseAdmin } from "./supabaseAdmin";
 
 export async function getFestivalMultiplier() {
   const today = new Date().toISOString().slice(0,10);

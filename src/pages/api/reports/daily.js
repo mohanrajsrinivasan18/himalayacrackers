@@ -1,5 +1,5 @@
 
-import { supabaseAdmin } from "@/lib/supabaseClient";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 export default async function handler(req, res) {
   const { data } = await supabaseAdmin.rpc("daily_sales_summary");

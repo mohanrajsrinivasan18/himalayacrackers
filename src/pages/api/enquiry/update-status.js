@@ -1,5 +1,5 @@
 
-import { supabaseAdmin } from "@/lib/supabaseClient";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 export default async function handler(req, res) {
   const { enquiryId, status } = req.body;
   if (status === "Paid") {

@@ -1,5 +1,5 @@
 
-import { supabaseAdmin } from "@/lib/supabaseClient";
+import { supabaseAdmin } from "@/lib/supabaseAdmin";
 const SITE_URL = "https://www.himalayacrackers.com";
 
 export async function getServerSideProps({ res }) {
