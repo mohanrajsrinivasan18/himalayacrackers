@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { supabase } from "@/lib/supabaseClient";
 import styles from "./AdminLayout.module.scss";
 
 export default function AdminLayout({ children }) {
@@ -28,6 +29,11 @@ export default function AdminLayout({ children }) {
   useEffect(() => {
     setSidebarOpen(false);
   }, [router.pathname]);
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    router.push("/admin");
+  }
 
   return (
     <div className={styles.layout}>
@@ -72,6 +78,15 @@ export default function AdminLayout({ children }) {
           >
             Scanner
           </a>
+          
+          <div className={styles.divider}></div>
+          
+          <button 
+            className={styles.logoutButton}
+            onClick={handleLogout}
+          >
+            🚪 Logout
+          </button>
         </nav>
       </div>
       
