@@ -438,22 +438,121 @@
 }
 
 /* ==============================
-   RESPONSIVE
+   RESPONSIVE - MOBILE FIRST
 ================================ */
 @media (max-width: 768px) {
-  .headerRow {
-    display: none;
+  .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card:last-child {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .compactRow {
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
   }
   
   .mainInfo {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .orderNumber {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .enquiryNum {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .namePhone {
+    order: 1;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .phone {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 2px;
+  }
+  
+  .orderValue {
+    order: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 20px;
+    padding: 8px 0;
+  }
+  
+  .itemCount {
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  .statusBadge {
+    order: 3;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .status {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+  
+  .paymentMethod {
+    order: 4;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .paymentMethod .paymentSelect {
+    max-width: 100%;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
   }
   
   .date {
-    text-align: left;
+    order: 5;
+    justify-content: flex-start;
     font-size: 12px;
+    color: #9ca3af;
+    padding-top: 8px;
+    border-top: 1px solid #f3f4f6;
+  }
+  
+  .expandIcon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px;
+    font-size: 14px;
+  }
+  
+  .expandedContent {
+    padding: 16px;
   }
   
   .notesSection {
@@ -462,50 +561,22 @@
   }
   
   .noteColumn textarea {
-    min-height: 60px;
-    font-size: 12px;
+    min-height: 70px;
+    font-size: 13px;
+    padding: 10px;
   }
   
   .actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: 10px;
   }
   
   .actions button,
   .actions select {
     width: 100%;
-    font-size: 12px;
-    padding: 10px 12px;
-  }
-  
-  .compactRow {
+    font-size: 14px;
     padding: 12px 16px;
-  }
-  
-  .expandedContent {
-    padding: 16px;
-  }
-  
-  .name {
-    font-size: 15px;
-  }
-  
-  .orderValue {
-    font-size: 16px;
-  }
-  
-  .phone {
-    font-size: 12px;
-  }
-  
-  .statusBadge {
-    justify-content: flex-start;
-  }
-  
-  .status {
-    font-size: 10px;
-    padding: 3px 10px;
   }
   
   .section {
@@ -513,113 +584,98 @@
   }
   
   .section h4 {
-    font-size: 13px;
-    margin-bottom: 6px;
+    font-size: 14px;
+    margin-bottom: 8px;
   }
   
   .section p {
-    font-size: 13px;
+    font-size: 14px;
   }
   
   .productsPreview {
-    padding: 12px;
+    padding: 14px;
   }
   
   .productItem {
-    grid-template-columns: 1fr auto auto;
-    gap: 8px;
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-  
-  .productName {
-    font-size: 12px;
-  }
-  
-  .productQty,
-  .productPrice {
-    font-size: 12px;
+    padding: 10px 12px;
+    font-size: 13px;
   }
   
   .editProductsBtn {
-    padding: 10px 14px;
-    font-size: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
   
   .lockBadge {
-    font-size: 11px;
+    font-size: 12px;
     width: 100%;
     justify-content: center;
+    padding: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .name {
-    font-size: 14px;
+  .card {
+    border-radius: 10px;
+    margin-bottom: 10px;
   }
   
-  .orderValue {
+  .compactRow {
+    padding: 14px;
+  }
+  
+  .name {
     font-size: 15px;
   }
   
   .phone {
-    font-size: 11px;
+    font-size: 12px;
   }
   
-  .compactRow {
-    padding: 10px 12px;
+  .orderValue {
+    font-size: 18px;
   }
   
-  .expandedContent {
-    padding: 12px;
+  .itemCount {
+    font-size: 12px;
   }
   
   .status {
-    font-size: 9px;
-    padding: 2px 8px;
+    font-size: 10px;
+    padding: 5px 12px;
+  }
+  
+  .expandedContent {
+    padding: 14px;
   }
   
   .section h4 {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .section p {
-    font-size: 12px;
+    font-size: 13px;
   }
   
   .noteColumn textarea {
-    min-height: 50px;
-    font-size: 11px;
+    min-height: 60px;
+    font-size: 12px;
     padding: 8px;
   }
   
   .actions button,
   .actions select {
-    font-size: 11px;
-    padding: 8px 10px;
+    font-size: 13px;
+    padding: 10px 14px;
   }
   
   .productItem {
-    font-size: 11px;
-    padding: 5px 8px;
-  }
-  
-  .productName {
-    font-size: 11px;
-  }
-  
-  .productQty,
-  .productPrice {
-    font-size: 11px;
-  }
-  
-  .moreItems {
-    font-size: 11px;
-    padding: 6px 10px;
+    font-size: 12px;
+    padding: 8px 10px;
   }
   
   .editProductsBtn {
-    padding: 8px 12px;
-    font-size: 11px;
+    padding: 10px 14px;
+    font-size: 13px;
   }
 }
