@@ -37,7 +37,7 @@ export default function ProductDetail() {
             <h1>{product.name}</h1>
             <p className={styles.price}>₹{product.price}</p>
 
-            <button onClick={() => addItem(product, 1)}>
+            <button className={styles.addButton} onClick={() => addItem(product, 1)}>
               Add to Cart
             </button>
           </div>
